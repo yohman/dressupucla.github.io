@@ -2,7 +2,7 @@
 layout: people
 title: Dawn Childress
 picture: 
-twitter: 
+twitter: kirschbombe
 github: kirschbombe
 email: dchildress@library.ucla.edu
 role: instructor

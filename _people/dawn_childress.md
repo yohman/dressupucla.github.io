@@ -1,7 +1,7 @@
 ---
 layout: people
 display_name: Dawn Childress
-title: Instructor
+title: Librarian, Digital Collections & Scholarship
 picture: 
 twitter: kirschbombe
 github: kirschbombe

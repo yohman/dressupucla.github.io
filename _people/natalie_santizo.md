@@ -1,7 +1,7 @@
 ---
 layout: people
 display_name: Natalie Santizo
-title:
+title: Mapping 1920's Baldwin Park
 picture: Natalie
 twitter:
 github: nataliesantizo

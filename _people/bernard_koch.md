@@ -8,5 +8,6 @@ github: kochbj
 email:
 role: participant
 session: summer-17
+category: people
 ---
 This is a test.

@@ -9,5 +9,5 @@ github: kirschbombe
 email: dchildress@library.ucla.edu
 web: http://dawnchildress.com
 role: instructor
-permalink: /instructors/dawn-childress
+permalink: /dawn-childress
 ---

@@ -9,7 +9,7 @@ layout: default
             <h2>{{ page.title }}</h2>
             {% for person in site.people %}
             {% if page.author == person.display_name %}
-            <a href="{{ person.url }}" style="text-decoration: none;"><h3>{{ page.author }}</h3></a>
+            <a href="{{ person.url }}" style="text-decoration: none;">{{ page.author }}<br></a>
             {% endif %}
             {% endfor %}
             <i>{{page.date | date_to_long_string }}</i>

@@ -21,7 +21,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://dressup.library.ucla.edu" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: 
 github_username:  dressupucla
-
+description: "UCLA Library's digital projects incubator for graduate students and librarians."
 # Build settings
 markdown: kramdown
 theme: minima

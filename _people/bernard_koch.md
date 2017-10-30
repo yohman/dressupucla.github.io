@@ -7,6 +7,6 @@ twitter:
 github: kochbj
 email:
 role: participant
-session: summer-17
+session: summer-16
 ---
 This is a test.

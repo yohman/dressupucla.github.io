@@ -27,7 +27,7 @@ layout: default
                 </div>
 
                 <div class="col-8">
-                    <h3><a href="{{ person.url }}">{{ person.display_name }}</a></h3>
+                    <h3><a href="{{site.baseurl}}{{ person.url }}">{{ person.display_name }}</a></h3>
                     <h4>{{person.title}}</h4>                    
                     <ul class="icons">
                         {% if person.twitter %}

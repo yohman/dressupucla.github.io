@@ -1,68 +1,59 @@
 ---
 layout: default
 ---
-
+{% assign sorted = site.sessions | sort: 'date' | reverse %}
 {% if page.session %}
     {% assign class = page.session %}
 {% else %}
-    {% assign class = "summer-17" %}
+    {% assign class = sorted[0].session %}
 {% endif %}
 
-<div id="wrapper" class="divided">
-    <section class="spotlight style2 orient-left content-orient-left">
-        <div class="content">
-            {% include navbar.html %}
-            <h2>Participants</h2>
-            {% for class in site.sessions %}
-            <a href="{{site.baseurl}}{{ class.url }}" class="button">{{ class.title }}</a>
-            {% endfor %}
-        </div>
-    </section>
-
+{% if page.title != "Participants" %}<h2>{{page.title}} Participants</h2>
+{% else %}<h2>{{sorted[0].title}} Participants</h2>{% endif %}
+{% for class in sorted %}
+<a href="{{site.baseurl}}{{ class.url }}" class="button">{{ class.title }}</a>
+{% endfor %}
+    <br><br>
     {% for person in site.people %}
     {% if person.role == "participant" and person.session == class %}
-    <section class="spotlight style2 orient-left content-orient-left">
-        <div class="content ">
-            <div class="row">
-                <div class="col-4">
-                    <div class="image" style="width: 10rem; height: 10rem; display: block; margin: auto;">
-                        {% if person.picture %}
-                        <img src="{{ site.baseurl }}/images/{{ person.picture }}.jpg">
-                        {% else %}
-                        <img src="{{ site.baseurl }}/images/colors.jpg">
-                        {% endif %}
-                    </div>
-                    
-                    
-                </div>
-
-                <div class="col-8">
-                        <h3><a href="{{site.baseurl}}{{ person.url }}">{{ person.display_name }}</a>                     
-                        </h3>
-                        <h4>{{person.title}}</h4>
-                    <ul class="icons">
-                        {% if person.twitter %}
-                        <li><a href="https://twitter.com/{{ person.twitter }}" class="icon style2 fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
-                        {% endif %}
-                        {% if person.github %}
-                        <li><a href="https://github.com/{{ person.github }}" class="icon style2 fa-github" target="_blank"><span class="label">GitHub</span></a></li>
-                        {% endif %}
-                         {% if person.email %}
-                        <li><a href="mailto:{{ person.email }}" class="icon style2 fa-envelope"><span class="label">Email</span></a></li>
-                        {% endif %} 
-                    </ul>
-
-                    <!-- {% if person.blurb %}
+    <div class="content">
+        <div class="row">
+            <div class="col-xs-2 col-sm-4 col-md-4 col-lg-4 col-xl-4" style="width: 16rem; height: 16rem;">
+                {% if person.picture %}
+                 <img class="img-circle" src="{{ site.baseurl }}/images/{{ person.picture }}.jpg" align="left">
+                {% else %}
+                <img class="img-circle" src="{{ site.baseurl }}/images/beatnik.jpg" align="left">
+                {% endif %}
+            </div>
+            <div class="col-xs-6 col-sm-8 col-md-8 col-lg-9 col-xl-10">
+                <h3><a href="{{ site.baseurl }}{{ person.url }}">{{ person.display_name }}</a>
+                 {% if person.twitter %}
+                <a href="https://twitter.com/{{ person.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                {% endif %}
+                {% if person.github %}
+                <a href="https://github.com/{{ person.github }}" target="_blank"><i class="fa fa-github"></i></a>
+                {% endif %}
+                {% if person.email %}
+                <a href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+                {% endif %}
+                {% if person.website %}
+                <a href="{{person.website}}" target="_blank"><i class="fa fa-globe"></i></a>
+                {% endif %}</h3>
+                <h4>{{person.title}}</h4>
+                <p>{{person.description}}</p>
+                {% assign postsPerPage = 2 %}
+                {% for post in site.posts %}
+                {% if post.author == person.display_name and postsPerPage > 0%}
+                {% assign postsPerPage = postsPerPage | minus: 1 %}
+                <h6><i class="fa fa-newspaper-o" aria-hidden="true"></i> <a href="{{site.baseurl}}{{ post.url }}">{{ post.title }}</a></h6>
+                {% endif %}
+                {% endfor %}
+             </div>
+        </div>
+    </div>
+       <!-- {% if person.blurb %}
                     <p class="blurb">{{ person.blurb }}</p>
                     {% endif %} -->
-                </div>
-            </div>
-        </div>
-    </section>
+
     {% endif %}
     {% endfor %}
-
-    <div class="footerbox">
-        {% include footer.html %}
-    </div>
-</div>

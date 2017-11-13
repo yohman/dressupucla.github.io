@@ -6,8 +6,10 @@ picture: benson_han
 twitter: bensonjaminhan
 github: bensonhan
 email: bensonjaminhan@gmail.com
-role: participant
-session:
+website:
+role: assistant
+session: Summer 2017
+date: 2017-06-01
 ---
 
 ## Biography

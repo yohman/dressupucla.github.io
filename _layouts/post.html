@@ -1,28 +1,42 @@
 ---
 layout: default
 ---
+<article class="post">
 
-<div id="wrapper" class="divided">
-    <section class="spotlight style2 orient-left content-orient-left">
-        <div class="content">
-            {% include navbar.html %}
-            <h2>{{ page.title }}</h2>
-            {% for person in site.people %}
-            {% if page.author == person.display_name %}
-            <a href="{{ person.url }}" style="text-decoration: none;">{{ page.author }}<br></a>
-            {% endif %}
-            {% endfor %}
-            <i>{{page.date | date_to_long_string }}</i>
-        </div>
-    </section>
+  <h1 class="post-title">{{ page.title }}</h1>
 
-    <section class="spotlight style2 orient-left content-orient-left">
-        <div class="content">
-            {{ page.content }}
-        </div>
-    </section>
+  <p class="post-meta">
+    <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%d-%m-%Y" }}</time>
 
-    <div class="footerbox">
+    {% if page.author %}
+      &nbsp;/&nbsp;
+      <span>{{ page.author }}</span>
+    {% endif %}
+  </p>
+
+  <div class="post-content">
+
+    {{ content }}
+
+    <div class="post-links">
+      {% if page.next.url %}
+        <a class="link-to-post" href="{{ page.next.url | relative_url}}">
+          <span class="link-to-post__next">&#10535; &nbsp;Next post</span>
+          <span class="link-to-post__title">{{ page.next.title }}</span>
+        </a>
+      {% endif %}
+
+      {% if page.previous.url %}
+        <a class="link-to-post" href="{{ page.previous.url | relative_url}}">
+          <span class="link-to-post__prev">&#10535; &nbsp;Previous post</span>
+          <span class="link-to-post__title">{{ page.previous.title }}</span>
+        </a>
+      {% endif %}
+    </div>
+
+  </div>
+
+</article>
+ <div class="footerbox">
         {% include footer.html %}
     </div>
-</div>

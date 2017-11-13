@@ -19,15 +19,45 @@ description: > # this means to ignore newlines until "baseurl:"
   UCLA Library's digital projects incubator for graduate students and librarians.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://dressup.library.ucla.edu" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: 
+twitter_username:
 github_username:  dressupucla
 description: "UCLA Library's digital projects incubator for graduate students and librarians."
 # Build settings
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-feed
 
+collections:
+  people:
+    title: People
+    output: true
+    permalink: /people/:name
+  sessions:
+    title: Sessions
+    output: true
+    permalink: /participants/:name
+  teamstatus:
+    title: Team Status
+    output: true
+    permalink: /team/:name
+
+future: true
+safe: false
+lsi: false
+excerpt_separator: "\n\n"
+
+compress_html:
+  comments: ["<!-- ", " -->"]
+  clippings: all
+  endings: all
+
+
+sass:
+  sass_dir: assets/_sass
+  style: compressed
+
+
+images: '/images'
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
@@ -40,15 +70,6 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
-collections:
-  people:
-    title: People
-    output: true
-    permalink: /people/:name
-  sessions:
-    title: Sessions
-    output: true
-    permalink: /participants/:name
 
 # defaults:
 #   - scope:

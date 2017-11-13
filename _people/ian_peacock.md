@@ -3,9 +3,11 @@ layout: people
 display_name: Ian Peacock
 title: Digital Projects Assistant
 picture: peacock_ian
-twitter: 
+twitter:
 github: ipeacock
 email: ipeacock@ucla.edu
-role: participant
-session: summer-17
+website:
+role: assistant
+session: Summer 2017
+date: 2017-06-01
 ---

@@ -1,0 +1,88 @@
+---
+layout: default
+---
+{% if page.teamstatus %}
+    {% assign status = page.teamstatus %}
+{% else %}
+    {% assign status = 'instructor' %}
+{% endif %}
+
+    {% if page.title == "The Team" %}<h2>Core Team</h2>
+    {% else %}<h2>{{page.title}}</h2>{% endif %}
+    {% for status in site.teamstatus %}
+    <a href="{{site.baseurl}}{{ status.url }}" class="button">{{ status.title }}</a>
+    {% endfor %}
+    <br><br>
+    {% for person in site.people %}
+    {% if person.role == status and person.status != 'alumni' and person.role == 'instructor' %}
+    <div class="content">
+        <div class="row">
+            <div class="col-xs-2 col-sm-4 col-md-4 col-lg-4 col-xl-4" style="width: 16rem; height: 16rem;">
+                {% if person.picture %}
+                 <img class="img-circle" src="{{ site.baseurl }}/images/{{ person.picture }}.jpg" align="left">
+                {% else %}
+                <img class="img-circle" src="{{ site.baseurl }}/images/beatnik.jpg" align="left">
+                {% endif %}
+            </div>
+            <div class="col-xs-6 col-sm-8 col-md-8 col-lg-9 col-xl-10">
+                <h3><a href="{{ site.baseurl }}{{ person.url }}">{{ person.display_name }}</a>
+                 {% if person.twitter %}
+                <a href="https://twitter.com/{{ person.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                {% endif %}
+                {% if person.github %}
+                <a href="https://github.com/{{ person.github }}" target="_blank"><i class="fa fa-github"></i></a>
+                {% endif %}
+                {% if person.email %}
+                <a href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+                {% endif %}
+                {% if person.website %}
+                <a href="{{person.website}}" target="_blank"><i class="fa fa-globe"></i></a>
+                {% endif %}</h3>
+                <h4>{{person.title}}</h4>
+                <p>{{person.description}}</p>
+             </div>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+   {% if page.title != 'Guest Instructors' and page.title != 'Assistants' %} <h2 id="alumni-header"></h2> {% endif %}
+    {% assign alumnisort = site.people | sort: 'date' | reverse %}
+    {% for person in alumnisort %}
+    {% if person.role == status and person.status == 'alumni' or person.role != 'instructor' %}
+    <script>
+    {% if page.title == "The Team" %}document.getElementById("alumni-header").innerHTML = "<br>Core Team Alumni"
+    {% elsif page.title == 'Core Team' %}document.getElementById("alumni-header").innerHTML = "<br>{{page.title}} Alumni";{% endif %}
+    </script>
+    <div class="content">
+        <div class="row">
+            <div class="col-xs-2 col-sm-4 col-md-4 col-lg-4 col-xl-4" style="width: 16rem; height: 16rem;">
+                {% if person.picture %}
+                 <img class="img-circle" src="{{ site.baseurl }}/images/{{ person.picture }}.jpg" align="left">
+                {% else %}
+                <img class="img-circle" src="{{ site.baseurl }}/images/beatnik.jpg" align="left">
+                {% endif %}
+            </div>
+            <div class="col-xs-6 col-sm-8 col-md-8 col-lg-9 col-xl-10">
+                <h3><a href="{{ site.baseurl }}{{ person.url }}">{{ person.display_name }}</a>
+                 {% if person.twitter %}
+                <a href="https://twitter.com/{{ person.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
+                {% endif %}
+                {% if person.github %}
+                <a href="https://github.com/{{ person.github }}" target="_blank"><i class="fa fa-github"></i></a>
+                {% endif %}
+                {% if person.email %}
+                <a href="mailto:{{ person.email }}"><i class="fa fa-envelope"></i></a>
+                {% endif %} </h3>
+                <h4>{{person.title}}</h4>
+                {% if person.session %}<b>{{person.session}}</b>{% endif %}
+                <p>{{person.description}}</p>
+             </div>
+        </div>
+    </div>
+
+    {% endif %}
+    {% endfor %}
+    <script>
+
+
+

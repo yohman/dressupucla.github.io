@@ -14,7 +14,7 @@ layout: default
 <a href="{{site.baseurl}}{{ class.url }}" class="button">{{ class.title }}</a>
 {% endfor %}
     <br><br>
-    {% for person in site.people %}
+    {% for person in site.participants %}
     {% if person.role == "participant" and person.session == class %}
     <div class="content">
         <div class="row">

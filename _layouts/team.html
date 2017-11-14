@@ -13,7 +13,7 @@ layout: default
     <a href="{{site.baseurl}}{{ status.url }}" class="button">{{ status.title }}</a>
     {% endfor %}
     <br><br>
-    {% for person in site.people %}
+    {% for person in site.team %}
     {% if person.role == status and person.status != 'alumni' and person.role == 'instructor' %}
     <div class="content">
         <div class="row">
@@ -46,7 +46,7 @@ layout: default
     {% endif %}
     {% endfor %}
    {% if page.title != 'Guest Instructors' and page.title != 'Assistants' %} <h2 id="alumni-header"></h2> {% endif %}
-    {% assign alumnisort = site.people | sort: 'date' | reverse %}
+    {% assign alumnisort = site.team | sort: 'date' | reverse %}
     {% for person in alumnisort %}
     {% if person.role == status and person.status == 'alumni' or person.role != 'instructor' %}
     <script>

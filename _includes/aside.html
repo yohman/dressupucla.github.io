@@ -8,10 +8,12 @@
 
     <div class="cover-text">
       <div class="heading">
-        {% if page.display_name %}
+      	{% if page.layout == 'people' and page.role == 'instructor' or page.role == 'assistant' or page.role == 'guest-instructor' %}
+          The Team
+        {% elsif page.layout == 'people' and page.role == 'participant' %}
+          Participants
+        {% elsif page.display_name %}
           {{page.display_name}}
-        {% if page.layout == 'people' and page.role == 'instructor' %}
-          "Core Team"
         {% else %}
           {{ page.title }}
         {% endif %}

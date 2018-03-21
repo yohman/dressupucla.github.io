@@ -1,5 +1,5 @@
 ---
-bg: "code.jpg"
+bg: "barkcloth.jpg"
 layout: page
 title: "Curriculum"
 permalink: /curriculum/
@@ -28,5 +28,3 @@ Promoting open, sharable data and making your research available in various web-
 
 ### <i class="fa fa-share-alt"></i> Connecting & community
 Join a dynamic community of researchers and expert library staff working with data-intensive projects and tools.
-
-

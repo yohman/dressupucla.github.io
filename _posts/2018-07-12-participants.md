@@ -6,6 +6,4 @@ author:
 categories: posts
 ---
 
-### Sample Heading
-** bold
-* italic
+** Announcement Coming Soon!

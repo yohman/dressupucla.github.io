@@ -3,7 +3,7 @@ layout: people
 display_name: Pete Broadwell
 title: Academic Projects Developer
 picture: cat_portrait3
-description:
+description: "Pete works with faculty, library specialists, and students to develop novel online resources that use emerging technologies in computational analysis, digital archiving, and multimedia presentation to support humanities and social sciences scholarship."
 twitter: PeterBroadwell
 github: broadwell
 email: broadwell@library.ucla.edu

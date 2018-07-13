@@ -3,7 +3,7 @@ layout: people
 display_name: Zoe Borovsky
 title: Librarian for Digital Research
 picture:
-description:
+description: "Zoe has a background in the humanities (PhD in Scandinavian Literature from UC Berkeley) and has been a professor of Scandinavian Literature at University of Oregon. She has worked for over ten years with UCLA faculty incorporating digital tools and methods into their research."
 twitter: zoepster
 github: zoepster
 email: zoe@library.ucla.edu

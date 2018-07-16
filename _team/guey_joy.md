@@ -1,7 +1,7 @@
 ---
 layout: people
 display_name: Joy Guey
-title: Digital Research Assistant, UCLA Library
+title: Digital Research Assistant
 picture: awkward_turtle
 description: "Joy will be starting the Masters of Social Science Program at UCLA in the Fall and in the meantime, is excited to use her knowledge of digital research tools to help with various projects. She is especially interested in immersive technologies, mental health, and the built environment."
 twitter:

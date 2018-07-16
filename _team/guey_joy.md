@@ -5,7 +5,7 @@ title: Digital Research Assistant, UCLA Library
 picture: awkward_turtle
 description: "Joy will be starting the Masters of Social Science Program at UCLA in the Fall and in the meantime, is excited to use her knowledge of digital research tools to help with various projects. She is especially interested in immersive technologies, mental health, and the built environment."
 email: jguey@humnet.ucla.edu
-role: assistant instructor
+role: instructor
 ---
 
 ## Biography
